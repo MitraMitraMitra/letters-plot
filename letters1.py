@@ -594,8 +594,9 @@ def generate_letter_point(which_letter,height,current,points_distance=2):
             return points, current
 
 
-s = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+#s = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 #s = 'ABCD'
+s = 'IT WORKS'
 height = 1000
 distance_between_points = 20
 points = []
