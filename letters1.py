@@ -9,22 +9,25 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
         if which_letter == 'A':
             # WIDTH = ?
             points1 = []
-            increment = points_distance * (height/3.8) / math.sqrt(height ** 2 + (height / 3.8) ** 2)
+            increment = points_distance * (height / 5) / math.sqrt(height ** 2 + (height / 5) ** 2)
             x_coordinate = 0
-            while 3.8*x_coordinate<height:
-                points1.append((x_coordinate,3.8*x_coordinate))
+            while 5 * x_coordinate<height:
+                points1.append((x_coordinate, 5 * x_coordinate))
                 x_coordinate = x_coordinate + increment
 
             points2 = []
-            while -3.8*x_coordinate+2*height>0:
-                points2.append((x_coordinate, -3.8*x_coordinate+2*height))
+            while -5 * x_coordinate + 2 * height > 0:
+                points2.append((x_coordinate, -5 * x_coordinate + 2 * height))
                 x_coordinate = x_coordinate + increment
-            start_of_line = min(points1, key=lambda x: abs(x[1] - 0.6 * height))
-            end_of_line = min(points2, key=lambda x: abs(x[1] - 0.6 * height))
+
+            start_of_line = min(points1, key = lambda x: abs(x[1] - 0.6 * height))
+            end_of_line = min(points2, key = lambda x: abs(x[1] - 0.6 * height))
 
             points3 = []
-            for i in range(int(start_of_line[0]),int(end_of_line[0]),points_distance):
-                points3.append((i,0.6*height))
+            i = start_of_line[0]
+            while i < end_of_line[0]:
+                points3.append((i, 0.6 * height))
+                i = i + points_distance
 
             points4 = points1 + points2 + points3
             points = []
@@ -134,52 +137,59 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
 
         elif which_letter == 'E':
             points1 = []
-            for i in range(0,height,points_distance):
-                points1.append((0,i))
+            for i in range(0, height, points_distance):
+                points1.append((0, i))
             points2 = []
-            for i in range(0,int(height/3),points_distance):
-                points2.append((i,0))
-                points2.append((i,int(height/2)))
-                points2.append((i,height))
+
+            i = 0
+            while i < 0.4 * height:
+                points2.append((i, 0))
+                points2.append((i, height / 2))
+                points2.append((i, height))
+                i = i + points_distance
+
 
             points3 = points1 + points2
             points = []
             for i in points3:
-                points.append((i[0]+current,i[1]))
+                points.append((i[0] + current, i[1]))
 
             current = current + int(height/3) + int(height/10)
             return points,current
 
         elif which_letter == 'F':
             points1 = []
-            for i in range(0,height,points_distance):
-                points1.append((current,i))
+            for i in range(0, height, points_distance):
+                points1.append((current, i))
 
             points2 = []
-            for i in range(current, current+int(0.4*height), points_distance):
+            i = current
+            while i < current + 0.4 * height:
                 points2.append((i, height))
+                i = i + points_distance
 
             points3 = []
-            for i in range(current, current + int(0.33 * height), points_distance):
-                points3.append((i, 0.68*height))
+            i = current
+            while i < 0.33 * height:
+                points3.append((i, 0.68 * height))
+                i = i + points_distance
 
             points = points1 + points2 + points3
-            current = current + int(0.4 * height) + int(height/10)
-            return points,current
+            current = current + int(0.4 * height) + int(height / 10)
+            return points, current
 
 
         elif which_letter == 'G':
             points1 = []
-            radius = height/2
+            radius = height / 2
             #arc_length = 2*math.pi*radius*(theta/360)
             arc_length = points_distance
-            theta = arc_length*360/(2*math.pi*radius)
-            #print(theta)
-            #arc_length = 2*math.pi*radius*(theta/360)
-            #print(arc_length)
-            #for i in range(60,360,int((2*math.pi*height/2)/360)):
-            for i in range(60, 360, int(theta)):
-                points1.append((radius * math.cos(i * math.pi/180), radius * math.sin(i * math.pi/180)))
+            theta = arc_length * 360 / (2 * math.pi * radius)
+
+            i = 60
+            while i < 360:
+                points1.append((radius * math.cos(i * math.pi / 180), radius * math.sin(i * math.pi / 180)))
+                i = i + theta
 
             points2 = []
             for i in range(int(height / 2),int(0.2 * height), -points_distance):
@@ -188,27 +198,31 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
             points3 = points1 + points2
             points = []
             for i in points3:
-                points.append((i[0] + current + height/2,i[1]+height/2))
+                points.append((i[0] + current + height / 2, i[1] + height / 2))
 
-            current = current + height + int(height/10)
+            current = current + height + int(height / 10)
             return points,current
 
 
         elif which_letter == 'H':
             points1 = []
-            for i in range(0, height, points_distance):
+            i = 0
+            while i < height:
                 points1.append((0, i))
-                points1.append((height/3,i))
+                points1.append((0.4 * height, i))
+                i = i + points_distance
 
             points2 = []
-            for i in range(0, int(height/3), points_distance):
-                points2.append((i, height/2))
+            i = 0
+            while i < 0.4 * height:
+                points2.append((i, height / 2))
+                i = i + points_distance
 
-            points3 = points1+points2
+            points3 = points1 + points2
 
             points = []
             for i in points3:
-                points.append((i[0]+current,i[1]))
+                points.append((i[0] + current, i[1]))
 
             current = current + int(height/3) + int(height/10)
             return points,current
@@ -217,9 +231,6 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
         elif which_letter == 'I':
             points1 = []
             initial = current
-            #for i in range(0, int(0.9 * height), points_distance):
-                #for j in range(current, current + int(height / 25), points_distance):
-                    #points1.append((j, i))
 
             i = 0
             while i < 0.9 * height:
@@ -252,12 +263,17 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
 
         elif which_letter == 'J':
             points1 = []
-            for i in range(int(height/6), height, points_distance):
-                points1.append((height/6, i))
+            i = height / 6
+            while i < height:
+                points1.append((0.4 * height, i))
+                i = i + points_distance
+
 
             points2 = []
-            for i in range(-int(height/6), int(height/6), points_distance):
+            i = 0
+            while i < 0.4 * height:
                 points2.append((i, height))
+                i = i + points_distance
 
             points3 = []
             radius = height / 6
@@ -267,7 +283,7 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
             i = 180
             while i < 360:
             #for i in range(180, 360, int((2 * math.pi * height / 2) / 360)):
-                points3.append((radius * math.cos(i * math.pi / 180), radius + radius * math.sin(i * math.pi / 180)))
+                points3.append((0.4 * height - radius + radius * math.cos(i * math.pi / 180), radius + radius * math.sin(i * math.pi / 180)))
                 #i = i + (2 * math.pi * height / 2) / 360
                 i = i + theta
 
@@ -275,7 +291,7 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
 
             points = []
             for i in points4:
-                points.append((current+i[0]+height/6,i[1]))
+                points.append((current + i[0], i[1]))
 
             current = current + int(height/3) + int(height/10)
             return points,current
@@ -283,25 +299,30 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
 
         elif which_letter == 'K':
             points1 = []
-            for i in range(0, height, points_distance):
+            i = 0
+            while i < height:
                 points1.append((0, i))
+                i = i + points_distance
+
 
             points2 = []
-            for i in range(0, int(height/20), points_distance):
-                points1.append((i, height/2))
+            i = 0
+            while i < height / 20:
+                points1.append((i, height / 2))
+                i = i + points_distance
 
             points3 = []
-            while i < height / 3 - height / 20:
-            #for i in range(0, int(height/3-height/20), int(points_distance/1.764)):
-                points3.append((i, height/2+1.764*i))
-                points3.append((i, height/2 -1.764 * i))
-                i = i + points_distance / 1.764
+            i = 0
+            while i < 0.4 * height:
+                points3.append((i + height / 20, height / 2 + 1.764 * i))
+                points3.append((i + height / 20, height / 2 - 1.764 * i))
+                i = i + points_distance
 
-            points4 = []
-            for i in points3:
-                points4.append((i[0]+height/20,i[1]))
+            #points4 = []
+            #for i in points3:
+                #points4.append((i[0]+height/20,i[1]))
 
-            points5 = points1 + points2 + points4
+            points5 = points1 + points2 + points3
 
             points = []
             for i in points5:
@@ -617,12 +638,16 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
         elif which_letter == 'X':
             width = 0.33 * height
 
+            center_y = height / 2
+            center_x = width / 2
+
             points1 = []
             i = 0
-            while i < width:
-            #for i in range(0, int(width), int(points_distance / 6.06)):
-                points1.append((i, height - i * 3.03))
-                points1.append((i, i * 3.03))
+            while i < width / 2:
+                points1.append((width / 2 - i, height + i * 3.03))
+                points1.append((width / 2 + i, height + i * 3.03))
+                points1.append((width / 2 - i, height - i * 3.03))
+                points1.append((width / 2 + i, height - i * 3.03))
                 i = i + points_distance / 6.06
 
             points = []
@@ -677,10 +702,10 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
 
 
 #s = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-s = 'STUVWXYZ'
+s = 'K'
 #s = 'K'
-height = 100
-distance_between_points = 15
+height = 1000
+distance_between_points = 20
 points = []
 current = 0
 for i in s:
