@@ -5,7 +5,7 @@ import math
 import csv
 import re
 
-def generate_letter_point(which_letter, height, current, points_distance = 2):
+def generate_letter_point(which_letter, height, points_distance):
 
         if which_letter == 'A':
             points1 = []
@@ -32,10 +32,10 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
             points4 = points1 + points2 + points3
             points = []
             for i in points4:
-                points.append((i[0] + current, i[1]))
+                points.append((i[0], i[1]))
 
-            current = current + 0.4 * height + height / 10
-            return points, current
+            width = 0.4 * height
+            return points, width
 
 
         elif which_letter == 'B':
@@ -73,10 +73,10 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
             points4 = points1 + points2 + points3
             points = []
             for i in points4:
-                points.append((i[0] + current, i[1]))
+                points.append((i[0], i[1]))
 
-            current = current + 0.4 * height + height / 10
-            return points, current
+            width = 0.4 * height
+            return points, width
 
 
         elif which_letter == 'C':
@@ -100,10 +100,10 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
             points3 = points1 + points2
             points = []
             for i in points3:
-                points.append((i[0] + current, i[1]))
+                points.append((i[0], i[1]))
 
-            current = current + 0.4 * height + height / 10
-            return points, current
+            width = 0.4 * height
+            return points, width
 
 
         elif which_letter == 'D':
@@ -133,10 +133,10 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
             points4 = points1 + points2 + points3
             points = []
             for i in points4:
-                points.append((current + i[0], i[1]))
+                points.append((i[0], i[1]))
 
-            current = current + 0.4 * height + height / 10
-            return points, current
+            width = 0.4 * height
+            return points, width
 
 
         elif which_letter == 'E':
@@ -158,10 +158,10 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
             points3 = points1 + points2
             points = []
             for i in points3:
-                points.append((i[0] + current, i[1]))
+                points.append((i[0], i[1]))
 
-            current = current + 0.4 * height + height / 10
-            return points, current
+            width = 0.4 * height
+            return points, width
 
         elif which_letter == 'F':
             points1 = []
@@ -185,10 +185,10 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
             points4 = points1 + points2 + points3
             points = []
             for i in points4:
-                points.append((current + i[0], i[1]))
+                points.append((i[0], i[1]))
 
-            current = current + 0.4 * height + height / 10
-            return points, current
+            width = 0.4 * height
+            return points, width
 
 
         elif which_letter == 'G':
@@ -224,10 +224,10 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
             points5 = points1 + points2 + points3 + points4
             points = []
             for i in points5:
-                points.append((current + i[0], i[1]))
+                points.append((i[0], i[1]))
 
-            current = current + 0.4 * height + height / 10
-            return points, current
+            width = 0.4 * height
+            return points, width
 
 
         elif which_letter == 'H':
@@ -248,10 +248,10 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
 
             points = []
             for i in points3:
-                points.append((i[0] + current, i[1]))
+                points.append((i[0], i[1]))
 
-            current = current + 0.4 * height + height / 10
-            return points, current
+            width = 0.4 * height
+            return points, width
 
 
         elif which_letter == 'I':
@@ -271,10 +271,10 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
             points3 = points1 + points2
             points = []
             for i in points3:
-                points.append((current + i[0], i[1]))
+                points.append((i[0], i[1]))
 
-            current = current + 0.4 * height + height / 10
-            return points, current
+            width = 0.4 * height
+            return points, width
 
 
         elif which_letter == 'J':
@@ -305,10 +305,10 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
 
             points = []
             for i in points4:
-                points.append((current + i[0], i[1]))
+                points.append((i[0], i[1]))
 
-            current = current + 0.4 * height + height / 10
-            return points, current
+            width = 0.4 * height
+            return points, width
 
 
         elif which_letter == 'K':
@@ -339,10 +339,10 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
 
             points = []
             for i in points5:
-                points.append((i[0] + current, i[1]))
+                points.append((i[0], i[1]))
 
-            current = current + 0.4 * height + height / 10
-            return points, current
+            width = 0.4 * height
+            return points, width
 
 
         elif which_letter == 'L':
@@ -359,10 +359,10 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
 
             points = []
             for i in points1:
-                points.append((i[0] + current, i[1]))
+                points.append((i[0], i[1]))
 
-            current = current + 0.4 * height + height / 10
-            return points, current
+            width = 0.4 * height
+            return points, width
 
 
         elif which_letter == 'M':
@@ -384,10 +384,10 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
 
             points = []
             for i in points3:
-                points.append((i[0] + current, i[1]))
+                points.append((i[0], i[1]))
 
-            current = current + 0.4 * height + height / 10
-            return points, current
+            width = 0.4 * height
+            return points, width
 
 
         elif which_letter == 'N':
@@ -408,13 +408,13 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
 
             points = []
             for i in points3:
-                points.append((i[0]+current,i[1]))
+                points.append((i[0], i[1]))
 
-            current = current + 0.4*height + height / 10
-            return points, current
+            width = 0.4 * height
+            return points, width
 
 
-        elif which_letter == 'O':
+        elif which_letter == 'O' or which_letter == '0':
             points1 = []
             radius = 0.2 * height
             arc_length = points_distance
@@ -436,10 +436,10 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
             points3 = points1 + points2
             points = []
             for i in points3:
-                points.append((current + i[0], i[1]))
+                points.append((i[0], i[1]))
 
-            current = current + 0.4 * height + height / 10
-            return points, current
+            width = 0.4 * height
+            return points, width
 
 
         elif which_letter == 'P':
@@ -468,10 +468,10 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
             points4 = points1 + points2 + points3
             points = []
             for i in points4:
-                points.append((i[0] + current, i[1]))
+                points.append((i[0], i[1]))
 
-            current = current + 0.4 * height + height / 10
-            return points, current
+            width = 0.4 * height
+            return points, width
 
 
         elif which_letter == 'Q':
@@ -504,10 +504,10 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
             points4 = points1 + points2 + points3
             points = []
             for i in points4:
-                points.append((current + i[0], i[1]))
+                points.append((i[0], i[1]))
 
-            current = current + 0.4 * height + height / 10
-            return points, current
+            width = 0.4 * height
+            return points, width
 
         elif which_letter == 'R':
             points1 = []
@@ -542,10 +542,10 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
             points5 = points1 + points2 + points3 + points4
             points = []
             for i in points5:
-                points.append((i[0] + current, i[1]))
+                points.append((i[0], i[1]))
 
-            current = current + 0.4 * height + height / 10
-            return points, current
+            width = 0.4 * height
+            return points, width
 
 
         elif which_letter == 'S':
@@ -582,10 +582,10 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
             points = []
             points4 = points1 + points2 + points3
             for i in points4:
-                points.append((current + i[0], i[1]))
+                points.append((i[0], i[1]))
 
-            current = current + 0.4 * height + height / 10
-            return points, current
+            width = 0.4 * height
+            return points, width
 
 
         elif which_letter == 'T':
@@ -605,10 +605,10 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
 
             points = []
             for i in points3:
-                points.append((i[0] + current, i[1]))
+                points.append((i[0], i[1]))
 
-            current = current + 0.4 * height + height / 10
-            return points, current
+            width = 0.4 * height
+            return points, width
 
 
         elif which_letter == 'U':
@@ -634,10 +634,10 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
 
             points = []
             for i in points4:
-                points.append((current + i[0], i[1]))
+                points.append((i[0], i[1]))
 
-            current = current + 0.4 * height + height / 10
-            return points, current
+            width = 0.4 * height
+            return points, width
 
 
         elif which_letter == 'V':
@@ -650,10 +650,10 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
 
             points = []
             for i in points1:
-                points.append((i[0] + current, i[1]))
+                points.append((i[0], i[1]))
 
-            current = current + 0.4 * height + height / 10
-            return points, current
+            width = 0.4 * height
+            return points, width
 
 
         elif which_letter == 'W':
@@ -669,9 +669,9 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
 
             points = []
             for i in points1:
-                points.append((current + i[0], i[1]))
-            current = current + 0.4 * height + height / 10
-            return points, current
+                points.append((i[0], i[1]))
+            width = 0.4 * height
+            return points, width
 
 
         elif which_letter == 'X':
@@ -689,9 +689,9 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
 
             points = []
             for i in points1:
-                points.append((current + i[0], i[1]))
-            current = current + 0.4 * height + height / 10
-            return points, current
+                points.append((i[0], i[1]))
+            width = 0.4 * height
+            return points, width
 
 
         elif which_letter == 'Y':
@@ -712,10 +712,10 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
             points3 = points1 + points2
             points = []
             for i in points3:
-                points.append((current + i[0], i[1]))
+                points.append((i[0], i[1]))
 
-            current = current + 0.4 * height + height / 10
-            return points, current
+            width = 0.4 * height
+            return points, width
 
         elif which_letter == 'Z':
             points1 = []
@@ -733,10 +733,10 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
 
             points = []
             for i in points1:
-                points.append((current + i[0], i[1]))
+                points.append((i[0], i[1]))
 
-            current = current + 0.4 * height + height / 10
-            return points, current
+            width = 0.4 * height
+            return points, width
 
         elif which_letter == '-':
             points1 = []
@@ -745,11 +745,11 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
                 points1.append((i, height / 2))
                 i = i + points_distance
 
-            points = [(current + i[0], i[1]) for i in points1]
+            points = [(i[0], i[1]) for i in points1]
 
-            current = current + 0.4 * height + height / 10
+            width = 0.4 * height
 
-            return points, current
+            return points, width
 
         elif which_letter == '1':
             points1 = []
@@ -776,11 +776,11 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
 
             points = []
             for i in points4:
-                points.append((current + i[0], i[1]))
+                points.append((i[0], i[1]))
 
-            current = current + 0.4 * height + height / 10
+            width = 0.4 * height
 
-            return points, current
+            return points, width
 
         elif which_letter == '2':
             radius = height / 5
@@ -811,10 +811,10 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
             points4 = points1 + points2 + points3
             points = []
             for i in points4:
-                points.append((current + i[0], i[1]))
+                points.append((i[0], i[1]))
 
-            current = current + 0.4 * height + height / 10
-            return points, current
+            width = 0.4 * height
+            return points, width
 
         elif which_letter == '3':
             points1 = []
@@ -843,11 +843,11 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
             points4 = points1 + points2 + points3
             points = []
             for i in points4:
-                points.append((current + i[0], i[1]))
+                points.append((i[0], i[1]))
 
-            current = current + 0.4 * height + height / 10
+            width = 0.4 * height
 
-            return points, current
+            return points, width
 
         elif which_letter == '4':
             points1 = []
@@ -874,11 +874,11 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
 
             points = []
             for i in points4:
-                points.append((current + i[0], i[1]))
+                points.append((i[0], i[1]))
 
-            current = current + 0.4 * height + height / 10
+            width = 0.4 * height
 
-            return points, current
+            return points, width
 
         elif which_letter == '5':
             points1 = []
@@ -912,11 +912,11 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
 
             points = []
             for i in points4:
-                points.append((current + i[0], i[1]))
+                points.append((i[0], i[1]))
 
-            current = current + 0.4 * height + height / 10
+            width = 0.4 * height
 
-            return points, current
+            return points, width
 
         elif which_letter == '6':
             points1 = []
@@ -946,11 +946,11 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
 
             points = []
             for i in points4:
-                points.append((current + i[0], i[1]))
+                points.append((i[0], i[1]))
 
-            current = current + 0.4 * height + height / 10
+            width = 0.4 * height
 
-            return points, current
+            return points, width
 
         elif which_letter == '7':
             points1 = []
@@ -977,11 +977,11 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
 
             points = []
             for i in points4:
-                points.append((current + i[0], i[1]))
+                points.append((i[0], i[1]))
 
-            current = current + 0.4 * height + height / 10
+            width = 0.4 * height
 
-            return points, current
+            return points, width
 
         elif which_letter == '8':
             radius = 0.2 * height
@@ -1007,11 +1007,11 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
 
             points = []
             for i in points3:
-                points.append((current + i[0], i[1]))
+                points.append((i[0], i[1]))
 
-            current = current + 0.4 * height + height / 10
+            width = 0.4 * height
 
-            return points, current
+            return points, width
 
         elif which_letter == '9':
             points1 = []
@@ -1042,31 +1042,104 @@ def generate_letter_point(which_letter, height, current, points_distance = 2):
 
             points = []
             for i in points4:
-                points.append((current + i[0], i[1]))
+                points.append((i[0], i[1]))
 
-            current = current + 0.4 * height + height / 10
 
-            return points, current
+            width = 0.4 * height
 
-def write_letter(string, height, distance_between_points, current, filename = None):
+            return points, width
+
+class symbol():
+    def __init__(self, name, height, distance_between_points):
+        self.name = name
+        self.height = height
+        self.distance_between_points = distance_between_points
+        write = generate_letter_point(name, height, distance_between_points)
+        self.points = write[0]
+        self.width = write[1]
+        self.rotation = 0
+
+    # THIS METHOD IS FOR ROTATING THE SYMBOL AROUND ITS CENTER BY A PROVIDED ANGLE
+    def rotate(self, angle):
+
+        # COMPUTING THE COORDINATES OF THE CENTER OF THE SYMBOL
+        mini_x = min(self.points, key = lambda item: item[0])[0]
+        maxi_x = max(self.points, key = lambda item: item[0])[0]
+        mini_y = min(self.points, key = lambda item: item[1])[1]
+        maxi_y = max(self.points, key = lambda item: item[1])[1]
+        center = ((mini_x + maxi_x) / 2, (mini_y + maxi_y) / 2)
+
+        # TRANSLATING THE POINTS SUCH THAT WE CAN ROTATE AROUND THE ORIGIN ((0, 0))
+        translatedPoints = [(i[0] - center[0], i[1] - center[1]) for i in self.points]
+        rotatedPoints = []
+        for i in translatedPoints:
+            new_x = i[0] * math.cos(angle * math.pi / 180) - i[1] * math.sin(angle * math.pi / 180)
+            new_y = i[1] * math.cos(angle * math.pi / 180) + i[0] * math.sin(angle * math.pi / 180)
+            rotatedPoints.append((new_x + center[0], new_y + center[1]))
+
+        self.points = rotatedPoints
+        self.width = max(self.points, key = lambda item: item[0])[0] - min(self.points, key = lambda item: item[0])[0]
+
+        return self.points, self.width
+
+
+def write_text(string, height, distance_between_points, current, symbol_spacing = None, line_spacing = None, rotation = 0, filename = None):
+    #SETTING THE SPACING BETWEEN THE SYMBOLS
+    if symbol_spacing == None:
+        symbol_spacing = height / 10
+
+    # SETTING THE SPACING BETWEEN THE LINES
+    if line_spacing == None:
+        line_spacing = height / 10
+
     points = []
-    for i in s:
+    written = []
+    for i in string:
+
+        # FILTERING FOR KNOWN SYMBOLS
         if re.match('[0-9A-Za-z-]', i) != None:
+
+            # CONVERTING LOWERCASE TO UPPERCASE
             if i.islower():
                 i = i.upper()
-            if i == '0':
-                i = 'o'
-            letter = generate_letter_point(i, height, current, distance_between_points)
-            points = points + letter[0]
-            current = letter[1]
+
+            # WE CHECK IF THE SYMBOL HAS ALREADY BEEN WRITTEN WITH THIS ROTATION
+            found = None
+            for sym in written:
+                if sym.name == i and sym.rotation == rotation:
+                    found = sym
+
+            # IF THE SYMBOL HAS ALREADY BEEN WRITTEN WITH THIS ROTATION,
+            # WE DON'T GENERATE THE POINTS AGAIN
+            if found != None:
+                s = found
+            else:
+                s = symbol(i, height, distance_between_points)
+                if rotation != 0:
+                    s.rotate(rotation)
+                written.append(s)
+
+            # HERE WE SHIFT THE POINTS OF THE SYMBOL SO THAT THEY ARE IN THE DESIRED POSITION
+            new_letter = []
+            for point in s.points:
+                new_letter.append((current + point[0], point[1]))
+            points = points + new_letter
+
+            # UPDATING CURRENT STARTING POINT
+            current = current + s.width + symbol_spacing
+
+        # IF THE SYMBOL IS newline, ALL SYMBOLS ARE SHIFTED UP
         elif i == '\n':
             new_points = []
             for j in points:
-                new_points.append((j[0], j[1] + height + height / 10))
+                new_points.append((j[0], j[1] + height + line_spacing))
             current = 0
             points = new_points
+
+        # ANY UNKNOWN SYMBOL IS REPLACED WITH EMPTY SPACE
         else:
             current = current + 0.4 * height
+
     return points
 
     if filename != None:
@@ -1075,12 +1148,14 @@ def write_letter(string, height, distance_between_points, current, filename = No
             for i in points:
                 text.writerow(i)
 
-s = 'aid?!F'
-height = 25
-distance_between_points = 0.2
+#s = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+#s = 'ABCDEFghIQRS\nTUVWX3456789\nABCDEFghIQRS\nTUVWX3456789'
+s = 'ABCDA\nTUVW'
+height = 500
+distance_between_points = 10
 current = 0
 
-p = write_letter(s, height, distance_between_points, current, filename = None)
+p = write_text(s, height, distance_between_points, current, 500, 600, -15, filename = None)
 
 x = []
 y = []
