@@ -1150,18 +1150,15 @@ def write_text(string, height, distance_between_points, current, symbol_spacing 
 
 #s = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
 #s = 'ABCDEFghIQRS\nTUVWX3456789\nABCDEFghIQRS\nTUVWX3456789'
-s = 'ABCDA\nTUVW'
+s = 'ABCDA\nSSTUVW'
 height = 500
 distance_between_points = 10
 current = 0
 
 p = write_text(s, height, distance_between_points, current, 500, 600, -15, filename = None)
 
-x = []
-y = []
-for i in p:
-    x.append(i[0])
-    y.append(i[1])
+x = [i[0] for i in p]
+y = [i[1] for i in p]
 plt.scatter(x, y, 5)
 plt.axis('equal')
 plt.show()
