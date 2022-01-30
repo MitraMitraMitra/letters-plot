@@ -1113,7 +1113,7 @@ def write_text(string, height, distance_between_points, current, symbol_spacing 
     return points
 
 s = 'ABCDEFGHIJKLM\nNOPQRSTUVWXYZ01\n23456789\n!?b'
-#s = 'ABCDEFghIQRS\nTUVWX3456789\nABCDEFghIQRS\nTUVWX3456789'
+#s = 'TESTABCDEFghIQRS\nTUVWX3456789\nABCDEFghIQRS\nTUVWX3456789'
 #s = 'O!C'
 height = 1000
 distance_between_points = 15
