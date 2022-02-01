@@ -999,6 +999,7 @@ def generate_letter_point(which_letter, height, points_distance):
             return points, width
 
 
+
 class symbol():
     def __init__(self, name, height, distance_between_points):
         self.name = name
@@ -1027,13 +1028,12 @@ class symbol():
             new_y = i[1] * math.cos(angle * math.pi / 180) + i[0] * math.sin(angle * math.pi / 180)
             rotatedPoints.append((new_x + center[0], new_y + center[1]))
 
-        # UPDATING THE PROPERTIES OF THE SYMBOLS
+        # UPDATING THE PROPERTIES OF THE SYMBOL
         self.points = rotatedPoints
         self.width = max(self.points, key = lambda item: item[0])[0] - min(self.points, key = lambda item: item[0])[0]
         self.rotation = angle
 
         return self.points, self.width
-
 
 def write_text(string, height, distance_between_points, current, symbol_spacing = None, line_spacing = None, rotateAroundCenter = 0, filename = None):
     #SETTING THE SPACING BETWEEN THE SYMBOLS
@@ -1111,20 +1111,3 @@ def write_text(string, height, distance_between_points, current, symbol_spacing 
                 text.writerow(i)
 
     return points
-
-s = 'ABCDEFGHIJKLM\nNOPQRSTUVWXYZ01\n23456789\n!?b'
-#s = 'TESTABCDEFghIQRS\nTUVWX3456789\nABCDEFghIQRS\nTUVWX3456789'
-#s = 'O!C'
-height = 1000
-distance_between_points = 15
-current = 0
-
-p = write_text(s, height, distance_between_points, current, height / 10, 600, 0, 'output')
-
-import matplotlib
-import matplotlib.pyplot as plt
-x = [i[0] for i in p]
-y = [i[1] for i in p]
-plt.scatter(x, y, 5)
-plt.axis('equal')
-plt.show()
