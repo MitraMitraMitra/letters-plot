@@ -10,14 +10,14 @@ setup(
   url = 'https://github.com/MitraMitraMitra/letters-plot',
   download_url = 'https://github.com/MitraMitraMitra/letters-plot/archive/refs/tags/v_02.tar.gz',    # I explain this later on
   keywords = ['plotting', 'letters'],
-  install_requires=[
+  install_requires = [
           'math',
           'csv',
           're'
       ],
   classifiers = [
     'Development Status :: 5 - Production/Stable',
-    'Intended Audience :: hobbyists, memelords',
+    'Intended Audience :: Developers',
     'Topic :: Software Development :: Build Tools',
     'License :: OSI Approved :: MIT License',
     'Programming Language :: Python :: 3',
