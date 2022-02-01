@@ -1035,8 +1035,8 @@ class symbol():
 
         return self.points, self.width
 
-def write_text(string, height, distance_between_points, current, symbol_spacing = None, line_spacing = None, rotateAroundCenter = 0, filename = None):
-    #SETTING THE SPACING BETWEEN THE SYMBOLS
+def write_text(string, height, distance_between_points, symbol_spacing = None, line_spacing = None, rotateAroundCenter = 0, filename = None):
+    # SETTING THE SPACING BETWEEN THE SYMBOLS
     if symbol_spacing == None:
         symbol_spacing = height / 10
 
@@ -1054,6 +1054,7 @@ def write_text(string, height, distance_between_points, current, symbol_spacing 
 
     points = []
     written = []
+    current = 0
     for i in string:
 
         # FILTERING FOR KNOWN SYMBOLS
