@@ -8,7 +8,7 @@ setup(
   author = 'Jean-Paul Mitra',
   author_email = 'jeanmitra77@gmail.com',
   url = 'https://github.com/MitraMitraMitra/letters-plot',
-  download_url = 'https://github.com/MitraMitraMitra/letters-plot/archive/refs/tags/v_01.tar.gz',    # I explain this later on
+  download_url = 'https://github.com/MitraMitraMitra/letters-plot/archive/refs/tags/v_02.tar.gz',    # I explain this later on
   keywords = ['plotting', 'letters'],
   install_requires=[
           'math',
@@ -16,11 +16,11 @@ setup(
           're'
       ],
   classifiers = [
-    'Development Status :: 5 - Production/Stable',      # Chose either "3 - Alpha", "4 - Beta" or "5 - Production/Stable" as the current state of your package
+    'Development Status :: 5 - Production/Stable',
     'Intended Audience :: hobbyists, memelords',
     'Topic :: Software Development :: Build Tools',
     'License :: OSI Approved :: MIT License',
-    'Programming Language :: Python :: 3',      #Specify which pyhton versions that you want to support
+    'Programming Language :: Python :: 3',
     'Programming Language :: Python :: 3.4',
     'Programming Language :: Python :: 3.5',
     'Programming Language :: Python :: 3.6',
