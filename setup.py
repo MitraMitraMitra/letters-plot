@@ -6,7 +6,7 @@ with open('README.md') as read_me:
 setup(
   name = 'lettersPoints',
   packages = ['lettersPoints'],
-  version = '0.6',
+  version = '0.7',
   license = 'MIT',
   description = 'This library can be used to generate points that, when plotted, form letters. The height and spacing can be set.',
   long_description=long_description,
