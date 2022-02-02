@@ -8,7 +8,7 @@ setup(
   author = 'Jean-Paul Mitra',
   author_email = 'jeanmitra77@gmail.com',
   url = 'https://github.com/MitraMitraMitra/letters-plot',
-  download_url = 'https://github.com/MitraMitraMitra/letters-plot/archive/refs/tags/v_04.tar.gz',  
+  download_url = 'https://github.com/MitraMitraMitra/letters-plot/archive/refs/tags/v_05.tar.gz',  
   keywords = ['plotting', 'letters'],
   install_requires = [
            
