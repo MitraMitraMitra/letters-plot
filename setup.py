@@ -1,10 +1,16 @@
 from distutils.core import setup
+
+with open('README.md') as read_me:
+    long_description = read_me.read()
+
 setup(
   name = 'lettersPoints',
   packages = ['lettersPoints'],
   version = '0.6',
   license = 'MIT',
   description = 'This library can be used to generate points that, when plotted, form letters. The height and spacing can be set.',
+  long_description=long_description,
+  long_description_content_type='text/markdown',
   author = 'Jean-Paul Mitra',
   author_email = 'jeanmitra77@gmail.com',
   url = 'https://github.com/MitraMitraMitra/letters-plot',
